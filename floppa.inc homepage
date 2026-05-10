@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>floppa.inc</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(45deg, #ff6600, #ffcc00);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 4rem;
+      text-shadow: 4px 4px 0 #000;
+      margin: 20px 0;
+    }
+    .floppa {
+      font-size: 8rem;
+      animation: bounce 1.5s infinite;
+    }
+    .content {
+      background: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+    }
+    button {
+      background: #000;
+      color: #ffcc00;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      margin: 20px;
+    }
+    button:hover {
+      transform: scale(1.1);
+      background: #ff6600;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 1.2rem;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="floppa">🐱</div>
+    <h1>floppa.inc</h1>
+    <p style="font-size: 1.8rem;">Big Floppa Energy Only</p>
+
+    <div class="content">
+      <h2>Welcome to the official Floppa headquarters</h2>
+      <p>Est. 2024 • Serving premium caracal memes since day one.</p>
+      
+      <button onclick="meow()">MEOW MEOW</button>
+      <button onclick="alert('BIG FLOPPPA ACTIVATED 🐾')">Activate Big Floppa</button>
+    </div>
+
+    <footer>
+      made with ❤️ and massive ears<br>
+      floppafloppy.github.io
+    </footer>
+  </div>
+
+  <script>
+    function meow() {
+      const meows = ["MEOW!", "MREOWWW!", "BIG FLOPPPA", "🐱", "HONK HONK", "flop flop"];
+      alert(meows[Math.floor(Math.random() * meows.length)]);
+    }
+
+    // Random floating floppas
+    setInterval(() => {
+      const flop = document.createElement('div');
+      flop.textContent = '🐱';
+      flop.style.position = 'fixed';
+      flop.style.left = Math.random() * 100 + 'vw';
+      flop.style.fontSize = '2rem';
+      flop.style.opacity = '0.7';
+      flop.style.zIndex = '-1';
+      flop.style.animation = 'float 8s linear forwards';
+      document.body.appendChild(flop);
+      
+      setTimeout(() => flop.remove(), 8000);
+    }, 600);
+  </script>
+
+  <style>
+    @keyframes float {
+      to {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</body>
+</html>
